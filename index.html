@@ -18,7 +18,9 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -29,10 +31,28 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
+
       <!-- Timeblocks go here -->
+        <div id="scheduleRow" class="row">
+          
+          <div id="timesContainer" class="col-1"></div>
+          <div id="taskContainer" class="col-8"></div>
+          <div id="saveContainer" class="col-1"></div>
+          
+        </div>
+      
+     
     </div>
+
+
+ 
+
+
+     
+  
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
