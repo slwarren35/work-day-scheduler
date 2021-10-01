@@ -1,4 +1,4 @@
-var rightNow = moment().format("MMMM Do, YYYY, h:mm:ss A");
+var rightNow = moment().format("MMMM Do, YYYY, h:mm A");
 console.log(rightNow);
 $("#currentDay").text(rightNow);
 
@@ -7,26 +7,20 @@ console.log(timeNow);
 const scheduleRowContainer =document.querySelector("#scheduleRow");
 
 
-
-
-
-
-
-
-
-
-function checkTime() {
+var checkTime = function() {
+    //get current hour
     var timeNow = moment().hour();
-    //loop over taskBlock
-    var taskBlock = taskDisplayEl.getAttribute("id");
-    $("#taskContainer").each(function() {
-
-        if (taskBlock < timeNow) {
+    
+    //loop over each time block and compare to current time
+    $(".time-block").each(function() {
+        var timeBlock = $(this).attr("id")
+        console.log(timeBlock);
+        if (timeBlock < timeNow) {
             $(this).removeClass("future");
             $(this).removeClass("present");
             $(this).addClass("past");        
         }
-        else if (taskBlock === timeNow) {
+        else if (timeBlock === timeNow) {
             $(this).removeClass("past");
             $(this).removeClass("future");
             $(this).addClass("present");
@@ -40,6 +34,7 @@ function checkTime() {
     })
 };
 
+checkTime();
 
 
 
@@ -48,7 +43,7 @@ function checkTime() {
 
 
 
-var saveButtonHandler = function(event){
+/*var saveButtonHandler = function(event){
     console.log(event.target);
 }
 
@@ -72,4 +67,4 @@ var addTask = function(event) {
 //taskContainerEl.addEventListener("click", addTask);
 
 checkTime();
-
+*/
