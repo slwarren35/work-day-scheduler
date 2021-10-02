@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  
 }
 
 .textarea{
@@ -64,12 +65,15 @@ body {
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  
 }
 
 .saveBtn i{
   border: none;
-  padding: 10px auto;
-}
+  padding: 5px auto;
+  width: 100%;
+  }
+
 
 .saveBtn i:hover {
   font-size: 20px;

@@ -1,17 +1,12 @@
+var rightNow = moment().format("MMMM Do, YYYY, h:mm A");
+$("#currentDay").text(rightNow);
+
+
 var currentTime = setInterval(function() {
-    var rightNow = moment().format("MMMM Do, YYYY, h:mm A");
+    rigthNow = rightNow = moment().format("MMMM Do, YYYY, h:mm A");
     $("#currentDay").text(rightNow);
+    
 }, 1000);
-
-
-
-//var rightNow = moment().format("MMMM Do, YYYY, h:mm A");
-//console.log(rightNow);
-//$("#currentDay").text(rightNow);
-
-var timeNow = moment().hour();
-console.log(timeNow);
-
 
 var checkTime = function() {
     //get current hour
@@ -40,8 +35,8 @@ var checkTime = function() {
     })
 };
 
-
-
+var timeNow = moment().hour();
+console.log(timeNow);
 
 //Grab user input on button click
 $(".saveBtn").on("click", function() {
@@ -51,8 +46,6 @@ $(".saveBtn").on("click", function() {
     localStorage.setItem(taskTime, task);
 
 })
-
-
 
 //retrieve data from local storage
 $("#9 .description").val(localStorage.getItem("9"));
@@ -65,7 +58,7 @@ $("#15 .description").val(localStorage.getItem("15"));
 $("#16 .description").val(localStorage.getItem("16"));
 $("#17 .description").val(localStorage.getItem("17"));
 
-
+var counter = setInterval(checkTime, 1000);
 checkTime();
 
 
