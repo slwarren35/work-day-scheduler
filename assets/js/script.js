@@ -4,7 +4,6 @@ $("#currentDay").text(rightNow);
 
 var timeNow = moment().hour();
 console.log(timeNow);
-const scheduleRowContainer =document.querySelector("#scheduleRow");
 
 
 var checkTime = function() {
@@ -37,34 +36,27 @@ var checkTime = function() {
 checkTime();
 
 
+//Grab user input on button click
+$(".saveBtn").on("click", function() {
+    
+    var task = $(this).siblings(".description").val();
+    var taskTime = $(this).parent().attr("id");
+    
+    localStorage.setItem(taskTime, task);
+
+})
 
 
 
+//retrieve data from local storage
+$("#9 .description").val(localStorage.getItem("9"));
+$("#10 .description").val(localStorage.getItem("10"));
+$("#11 .description").val(localStorage.getItem("11"));
+$("#12 .description").val(localStorage.getItem("12"));
+$("#13 .description").val(localStorage.getItem("13"));
+$("#14 .description").val(localStorage.getItem("14"));
+$("#15 .description").val(localStorage.getItem("15"));
+$("#16 .description").val(localStorage.getItem("16"));
+$("#17 .description").val(localStorage.getItem("17"));
 
 
-
-/*var saveButtonHandler = function(event){
-    console.log(event.target);
-}
-
-var addTask = function(event) {
-    console.log(newTask);
-    console.log(event.target.id);
-    console.log(taskDisplayEl.value);
-    tasks.id = event.target.id;
-    tasks.task = taskDisplayEl.value;
-    tasks.push(tasks);
-    console.log(tasks);
-    var taskBlock = taskDisplayEl.getAttribute("id");
-    console.log("id:  " + taskBlock);
-}
-
-
-
-
-
-//saveButtonContainerEl.addEventListener("click", saveButtonHandler);
-//taskContainerEl.addEventListener("click", addTask);
-
-checkTime();
-*/
