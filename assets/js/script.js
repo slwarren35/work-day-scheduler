@@ -1,6 +1,13 @@
-var rightNow = moment().format("MMMM Do, YYYY, h:mm A");
-console.log(rightNow);
-$("#currentDay").text(rightNow);
+var currentTime = setInterval(function() {
+    var rightNow = moment().format("MMMM Do, YYYY, h:mm A");
+    $("#currentDay").text(rightNow);
+}, 1000);
+
+
+
+//var rightNow = moment().format("MMMM Do, YYYY, h:mm A");
+//console.log(rightNow);
+//$("#currentDay").text(rightNow);
 
 var timeNow = moment().hour();
 console.log(timeNow);
@@ -19,7 +26,7 @@ var checkTime = function() {
             $(this).removeClass("present");
             $(this).addClass("past");        
         }
-        else if (timeBlock === timeNow) {
+        else if (timeBlock == timeNow) {
             $(this).removeClass("past");
             $(this).removeClass("future");
             $(this).addClass("present");
@@ -33,12 +40,11 @@ var checkTime = function() {
     })
 };
 
-checkTime();
+
 
 
 //Grab user input on button click
 $(".saveBtn").on("click", function() {
-    
     var task = $(this).siblings(".description").val();
     var taskTime = $(this).parent().attr("id");
     
@@ -60,3 +66,7 @@ $("#16 .description").val(localStorage.getItem("16"));
 $("#17 .description").val(localStorage.getItem("17"));
 
 
+checkTime();
+
+
+//var time = setInterval(updateTime(rightNow), 60000);
